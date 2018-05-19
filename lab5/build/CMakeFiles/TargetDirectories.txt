@@ -1,8 +1,0 @@
-/home/zaz/lab5/build/CMakeFiles/rebuild_cache.dir
-/home/zaz/lab5/build/CMakeFiles/edit_cache.dir
-/home/zaz/lab5/build/CMakeFiles/tests.dir
-/home/zaz/lab5/build/CMakeFiles/SubstrSrch.dir
-/home/zaz/lab5/build/CMakeFiles/CheckOperations.dir
-/home/zaz/lab5/build/CMakeFiles/KMPfunc.dir
-/home/zaz/lab5/build/CMakeFiles/clean.dir
-/home/zaz/lab5/build/CMakeFiles/CycleShiftSrch.dir

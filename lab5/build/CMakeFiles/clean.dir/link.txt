@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -std=c++11   CMakeFiles/clean.dir/src/clean.cpp.o  -o clean -rdynamic 

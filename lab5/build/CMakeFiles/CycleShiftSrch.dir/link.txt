@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -std=c++11   CMakeFiles/CycleShiftSrch.dir/src/CycleShiftSrch.cpp.o  -o CycleShiftSrch -rdynamic libKMPfunc.a 

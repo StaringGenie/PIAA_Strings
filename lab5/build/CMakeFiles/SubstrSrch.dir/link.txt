@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -std=c++11   CMakeFiles/SubstrSrch.dir/src/SubstrSrch.cpp.o  -o SubstrSrch -rdynamic libKMPfunc.a 
