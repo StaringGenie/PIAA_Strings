@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zaz/lab5/hdr/KMPfunc.hpp
+iostream
+-
+string
+-
+vector
+-
+
+/home/zaz/lab5/src/CycleShiftSrch.cpp
+../hdr/KMPfunc.hpp
+/home/zaz/lab5/hdr/KMPfunc.hpp
+

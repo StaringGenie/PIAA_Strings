@@ -1,0 +1,2 @@
+/usr/bin/ar qc libKMPfunc.a  CMakeFiles/KMPfunc.dir/src/KMPfunc.cpp.o
+/usr/bin/ranlib libKMPfunc.a
