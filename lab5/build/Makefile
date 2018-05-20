@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zaz/lab5
+CMAKE_SOURCE_DIR = /mnt/c/Users/lolita/Documents/GitHub/PIAA_Strings/lab5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zaz/lab5/build
+CMAKE_BINARY_DIR = /mnt/c/Users/lolita/Documents/GitHub/PIAA_Strings/lab5/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +67,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zaz/lab5/build/CMakeFiles /home/zaz/lab5/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/lolita/Documents/GitHub/PIAA_Strings/lab5/build/CMakeFiles /mnt/c/Users/lolita/Documents/GitHub/PIAA_Strings/lab5/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zaz/lab5/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/lolita/Documents/GitHub/PIAA_Strings/lab5/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tests
+# Target rules for targets named ShiftTest
 
 # Build rule for target.
-tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tests
-.PHONY : tests
+ShiftTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ShiftTest
+.PHONY : ShiftTest
 
 # fast build rule for target.
-tests/fast:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-.PHONY : tests/fast
+ShiftTest/fast:
+	$(MAKE) -f CMakeFiles/ShiftTest.dir/build.make CMakeFiles/ShiftTest.dir/build
+.PHONY : ShiftTest/fast
 
 #=============================================================================
 # Target rules for targets named SubstrSrch
@@ -137,17 +137,30 @@ SubstrSrch/fast:
 .PHONY : SubstrSrch/fast
 
 #=============================================================================
-# Target rules for targets named CheckOperations
+# Target rules for targets named SubstrSrchTest
 
 # Build rule for target.
-CheckOperations: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CheckOperations
-.PHONY : CheckOperations
+SubstrSrchTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SubstrSrchTest
+.PHONY : SubstrSrchTest
 
 # fast build rule for target.
-CheckOperations/fast:
-	$(MAKE) -f CMakeFiles/CheckOperations.dir/build.make CMakeFiles/CheckOperations.dir/build
-.PHONY : CheckOperations/fast
+SubstrSrchTest/fast:
+	$(MAKE) -f CMakeFiles/SubstrSrchTest.dir/build.make CMakeFiles/SubstrSrchTest.dir/build
+.PHONY : SubstrSrchTest/fast
+
+#=============================================================================
+# Target rules for targets named CycleShiftSrch
+
+# Build rule for target.
+CycleShiftSrch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CycleShiftSrch
+.PHONY : CycleShiftSrch
+
+# fast build rule for target.
+CycleShiftSrch/fast:
+	$(MAKE) -f CMakeFiles/CycleShiftSrch.dir/build.make CMakeFiles/CycleShiftSrch.dir/build
+.PHONY : CycleShiftSrch/fast
 
 #=============================================================================
 # Target rules for targets named KMPfunc
@@ -163,30 +176,17 @@ KMPfunc/fast:
 .PHONY : KMPfunc/fast
 
 #=============================================================================
-# Target rules for targets named clean
+# Target rules for targets named CheckOperations
 
 # Build rule for target.
-clean: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean
-.PHONY : clean
+CheckOperations: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CheckOperations
+.PHONY : CheckOperations
 
 # fast build rule for target.
-clean/fast:
-	$(MAKE) -f CMakeFiles/clean.dir/build.make CMakeFiles/clean.dir/build
-.PHONY : clean/fast
-
-#=============================================================================
-# Target rules for targets named CycleShiftSrch
-
-# Build rule for target.
-CycleShiftSrch: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CycleShiftSrch
-.PHONY : CycleShiftSrch
-
-# fast build rule for target.
-CycleShiftSrch/fast:
-	$(MAKE) -f CMakeFiles/CycleShiftSrch.dir/build.make CMakeFiles/CycleShiftSrch.dir/build
-.PHONY : CycleShiftSrch/fast
+CheckOperations/fast:
+	$(MAKE) -f CMakeFiles/CheckOperations.dir/build.make CMakeFiles/CheckOperations.dir/build
+.PHONY : CheckOperations/fast
 
 src/CheckOperations.o: src/CheckOperations.cpp.o
 
@@ -296,59 +296,59 @@ src/SubstrSrch.cpp.s:
 	$(MAKE) -f CMakeFiles/SubstrSrch.dir/build.make CMakeFiles/SubstrSrch.dir/src/SubstrSrch.cpp.s
 .PHONY : src/SubstrSrch.cpp.s
 
-src/clean.o: src/clean.cpp.o
+test/ShiftTest.o: test/ShiftTest.cpp.o
 
-.PHONY : src/clean.o
-
-# target to build an object file
-src/clean.cpp.o:
-	$(MAKE) -f CMakeFiles/clean.dir/build.make CMakeFiles/clean.dir/src/clean.cpp.o
-.PHONY : src/clean.cpp.o
-
-src/clean.i: src/clean.cpp.i
-
-.PHONY : src/clean.i
-
-# target to preprocess a source file
-src/clean.cpp.i:
-	$(MAKE) -f CMakeFiles/clean.dir/build.make CMakeFiles/clean.dir/src/clean.cpp.i
-.PHONY : src/clean.cpp.i
-
-src/clean.s: src/clean.cpp.s
-
-.PHONY : src/clean.s
-
-# target to generate assembly for a file
-src/clean.cpp.s:
-	$(MAKE) -f CMakeFiles/clean.dir/build.make CMakeFiles/clean.dir/src/clean.cpp.s
-.PHONY : src/clean.cpp.s
-
-test/test.o: test/test.cpp.o
-
-.PHONY : test/test.o
+.PHONY : test/ShiftTest.o
 
 # target to build an object file
-test/test.cpp.o:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test.cpp.o
-.PHONY : test/test.cpp.o
+test/ShiftTest.cpp.o:
+	$(MAKE) -f CMakeFiles/ShiftTest.dir/build.make CMakeFiles/ShiftTest.dir/test/ShiftTest.cpp.o
+.PHONY : test/ShiftTest.cpp.o
 
-test/test.i: test/test.cpp.i
+test/ShiftTest.i: test/ShiftTest.cpp.i
 
-.PHONY : test/test.i
+.PHONY : test/ShiftTest.i
 
 # target to preprocess a source file
-test/test.cpp.i:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test.cpp.i
-.PHONY : test/test.cpp.i
+test/ShiftTest.cpp.i:
+	$(MAKE) -f CMakeFiles/ShiftTest.dir/build.make CMakeFiles/ShiftTest.dir/test/ShiftTest.cpp.i
+.PHONY : test/ShiftTest.cpp.i
 
-test/test.s: test/test.cpp.s
+test/ShiftTest.s: test/ShiftTest.cpp.s
 
-.PHONY : test/test.s
+.PHONY : test/ShiftTest.s
 
 # target to generate assembly for a file
-test/test.cpp.s:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test.cpp.s
-.PHONY : test/test.cpp.s
+test/ShiftTest.cpp.s:
+	$(MAKE) -f CMakeFiles/ShiftTest.dir/build.make CMakeFiles/ShiftTest.dir/test/ShiftTest.cpp.s
+.PHONY : test/ShiftTest.cpp.s
+
+test/SubstrSrchTest.o: test/SubstrSrchTest.cpp.o
+
+.PHONY : test/SubstrSrchTest.o
+
+# target to build an object file
+test/SubstrSrchTest.cpp.o:
+	$(MAKE) -f CMakeFiles/SubstrSrchTest.dir/build.make CMakeFiles/SubstrSrchTest.dir/test/SubstrSrchTest.cpp.o
+.PHONY : test/SubstrSrchTest.cpp.o
+
+test/SubstrSrchTest.i: test/SubstrSrchTest.cpp.i
+
+.PHONY : test/SubstrSrchTest.i
+
+# target to preprocess a source file
+test/SubstrSrchTest.cpp.i:
+	$(MAKE) -f CMakeFiles/SubstrSrchTest.dir/build.make CMakeFiles/SubstrSrchTest.dir/test/SubstrSrchTest.cpp.i
+.PHONY : test/SubstrSrchTest.cpp.i
+
+test/SubstrSrchTest.s: test/SubstrSrchTest.cpp.s
+
+.PHONY : test/SubstrSrchTest.s
+
+# target to generate assembly for a file
+test/SubstrSrchTest.cpp.s:
+	$(MAKE) -f CMakeFiles/SubstrSrchTest.dir/build.make CMakeFiles/SubstrSrchTest.dir/test/SubstrSrchTest.cpp.s
+.PHONY : test/SubstrSrchTest.cpp.s
 
 # Help Target
 help:
@@ -356,14 +356,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... tests"
+	@echo "... rebuild_cache"
+	@echo "... ShiftTest"
 	@echo "... SubstrSrch"
-	@echo "... CheckOperations"
-	@echo "... KMPfunc"
-	@echo "... clean"
+	@echo "... SubstrSrchTest"
 	@echo "... CycleShiftSrch"
+	@echo "... KMPfunc"
+	@echo "... CheckOperations"
 	@echo "... src/CheckOperations.o"
 	@echo "... src/CheckOperations.i"
 	@echo "... src/CheckOperations.s"
@@ -376,12 +376,12 @@ help:
 	@echo "... src/SubstrSrch.o"
 	@echo "... src/SubstrSrch.i"
 	@echo "... src/SubstrSrch.s"
-	@echo "... src/clean.o"
-	@echo "... src/clean.i"
-	@echo "... src/clean.s"
-	@echo "... test/test.o"
-	@echo "... test/test.i"
-	@echo "... test/test.s"
+	@echo "... test/ShiftTest.o"
+	@echo "... test/ShiftTest.i"
+	@echo "... test/ShiftTest.s"
+	@echo "... test/SubstrSrchTest.o"
+	@echo "... test/SubstrSrchTest.i"
+	@echo "... test/SubstrSrchTest.s"
 .PHONY : help
 
 

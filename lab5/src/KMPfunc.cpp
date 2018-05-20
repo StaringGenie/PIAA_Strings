@@ -1,6 +1,6 @@
 #include "../hdr/KMPfunc.hpp"
 
-vector<size_t> prefix_function(string s)
+vector<size_t> prefix_function(const string & s)
 {
 	size_t n = s.length();
 	vector<size_t> pi(n,0);
@@ -22,7 +22,7 @@ vector <size_t> KMP(const string & pattern, const string & text, int & operation
 	vector <size_t> result;
 
 
-	for (int k = 0, i = 0; i < text.length(); ++i)
+	for (size_t k = 0, i = 0; i < text.length(); ++i)
 	{
 		while ((k > 0) && (pattern[k] != text[i]))
 		{

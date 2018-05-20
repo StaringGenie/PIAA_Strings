@@ -36,7 +36,7 @@ int main() {
 	for (int i = 0; i<HOW_MUCH_TEXTS; i++)
 	{
 		cout << ".";
-		int limit = TEXT_SIZE + (rand() % TEXT_MAX_ADDED_SIZE) - (PATTERN_SIZE + PATTERN_MAX_ADDED_SIZE);
+		size_t limit = TEXT_SIZE + (rand() % TEXT_MAX_ADDED_SIZE) - (PATTERN_SIZE + PATTERN_MAX_ADDED_SIZE);
 		while (texts[i].size() < limit)
 		{
 			texts[i] += temps[rand() % (HOW_MUCH_PATTERNS)];
